@@ -18,6 +18,25 @@ class ImageTag {
     }
 };
 
+// Функция для обновления отображаемых изображений
+function updateImages(){
+    img1.setAttribute('src', image[image.length - 1]);
+    img2.setAttribute('src', image[0]);
+    img3.setAttribute('src', image[1]);
+}
+
+// Функция для переключения на следующее изображение
+function nextImage(){
+    image.push(image.shift()); // Перемещаем первое изображение в конец массива
+    updateImages();
+};
+
+// Функция для переключения на предыдущее изображение
+function previousImage(){
+    image.unshift(image.pop()); // Перемещаем последнее изображение в начало массива
+    updateImages();
+};
+
 // Добавляем div с таблицей для изображений в начало body
 document.body.insertAdjacentHTML('afterbegin', 
     `<div id="customDiv">
@@ -45,3 +64,10 @@ document.body.insertAdjacentHTML('beforeend',
     `<button type="button" id="previousBtn">previous</button><button type="button" id="nextBtn">next</button>`
 );
 
+// Получаем ссылки на кнопки
+const nextBtn = document.getElementById('nextBtn');
+const previousBtn = document.getElementById('previousBtn');
+
+// Добавляем обработчики событий на кнопки
+nextBtn.addEventListener('click', nextImage);
+previousBtn.addEventListener('click', previousImage);
