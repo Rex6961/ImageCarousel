@@ -1,0 +1,43 @@
+/* styles.css */
+:root {
+    margin: 0;
+    padding: 0;
+}
+
+#customDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45vw;
+    height: 15vw;
+}
+
+img {
+    max-width: 100%;
+}
+
+#nextBtn {
+    background-color: yellowgreen;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#nextBtn:hover {
+    background-color: magenta;
+}
+
+#nextBtn:active {
+    transform: translateY(1px);
+}
+
+#previousBtn {
+    background-color: aqua;
+}
+
+#previousBtn:hover {
+    background-color: magenta;
+}
+
+#previousBtn:active {
+    transform: translateY(1px);
+}
